@@ -8,18 +8,25 @@ from kivy.uix.boxlayout import BoxLayout
 
 class TutorialApp(App):
     def build(self):
-        b = BoxLayout()
-        t = TextInput(font_size=150)
+        b = BoxLayout(orientation='vertical')
+        t = TextInput(
+            text='default',
+            font_size=150,
+            size_hint_y=None,
+            height=200,
+            )
         f = FloatLayout()
         s = Scatter()
         l = Label(text="Hello!",
                   font_size=150)
 
+        t.bind(text=l.setter('text'))
+
         f.add_widget(s)
         s.add_widget(l)
 
-        b.add_widget(f)
         b.add_widget(t)
+        b.add_widget(f)
         return b
 
 if __name__ == "__main__":
