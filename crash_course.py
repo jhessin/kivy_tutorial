@@ -11,7 +11,7 @@ from kivy.properties import ListProperty
 import random
 
 class ScatterTextWidget(BoxLayout):
-    text_color = ListProperty([0, 0, 1, 1])
+    text_color = ListProperty([1, 0, 0, 1])
 
     def change_label_color(self, *args):
         color = [random.random() for i in range(3)] + [1]
